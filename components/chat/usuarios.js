@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled                from 'styled-components';
 import chatContext           from '../../context/chat/chatContext';
-// import Image from 'next/image';
+import Image from 'next/image';
 
 const ConUsuarios = styled.div`
     width: 100%;
@@ -70,9 +70,10 @@ const Usuarios = ({usuario}) => {
             <Ul>
                 <Li onClick={() => onClick(usuario.uid)}>
                  
-                 {/* {usuario.img.length > 0 && ( 
-                     <Image src={usuario.img ? (usuario.img) : ("/usuario.jpg") }  alt="imagen de usuario" /> 
-                  )} */}
+                 {usuario.img.length > 0 && ( 
+                    //  <Image src={ usuario.img ? (usuario.img) : ("/usuario.jpg") }  alt="imagen de usuario" /> 
+                     <img src={ usuario.img } alt="imagen de usuario" /> 
+                  )}
             
                     <p> {usuario.nombre} </p>
                 <div>

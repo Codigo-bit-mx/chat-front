@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from 'react';
-import Layout from '../components/Layout';
-import AuthContext from '../context/auth/authContext'; 
-import chatContext from '../context/chat/chatContext';
+import Layout        from '../components/Layout';
+import AuthContext   from '../context/auth/authContext'; 
+import chatContext   from '../context/chat/chatContext';
 import { useRouter } from 'next/router';
-import styled from 'styled-components';
+import styled        from 'styled-components';
 //componentes
 import Header   from '../components/Header';
 import Usuarios from '../components/chat/usuarios';
@@ -75,7 +75,7 @@ const Chat = () => {
     const { usuario, autenticacion, alarma, usuarioAutenticado } = authContext;
     const chat = useContext(chatContext);
     const { usuarios, menu, chatactivo, interactive } = chat;
-
+   
     useEffect(() => {
         if(!autenticacion) {
             router.push('/');
@@ -105,8 +105,8 @@ const Chat = () => {
     
             <MarcoUsuarios 
                 menu={menu}
-
             >
+                
             <p>Amigos</p>
             {
                 usuarios
@@ -116,12 +116,10 @@ const Chat = () => {
                         key={usuario.uid}
                         usuario={usuario}
                     />
-            
                 ))
             }
             </MarcoUsuarios>
 
-       
         <div>
             
             { chatactivo ? ( <Mensajes /> ) : (<ContenerdorDialogo> <Dialogo> Selecciona un Chat en el apartado de contactos ! </Dialogo> </ContenerdorDialogo> ) }  

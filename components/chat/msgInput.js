@@ -52,7 +52,7 @@ const MsgInput = ({msg}) => {
         <Persona>{nombre} <span> { horaMes(msg.createdAt) }</span> </Persona>
         </div>
         <div>
-        <Image src={img ? (img) : ("/usuario.jpg") } alt="img" />
+        <img src={img ? (img) : ("/usuario.jpg") } alt="img" />
         </div>
     </Li> 
 

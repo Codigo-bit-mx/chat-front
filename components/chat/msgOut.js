@@ -56,7 +56,7 @@ const MsgOut = ({msg}) => {
             menu={menu}
         >
             <div>
-            <Image src={img ? (img) : ("/usuario.jpg") } alt="img" />
+            <img src={img ? (img) : ("/usuario.jpg") } alt="img" />
             </div>
             
             <div>

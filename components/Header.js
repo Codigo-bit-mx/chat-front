@@ -105,7 +105,7 @@ const Header = () => {
                 </div>
 
                 <MarcoBienvenida>
-                    <Image src={img} />
+                    <img src={img} />
                     <h4> Hola, {nombre} <AiFillCaretDown onClick = {() => menu() }/> </h4>
                 </MarcoBienvenida>
             

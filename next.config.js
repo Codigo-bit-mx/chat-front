@@ -3,7 +3,11 @@ module.exports = {
    env: {
     backendURLLOCAL:'http://localhost:8080',
     backendURLProduccion: 'https://chatbitback21.herokuapp.com/',
-    socket: 'https://chatbitback21.herokuapp.com/'
+    // socket: 'https://chatbitback21.herokuapp.com/'
+    socket: 'http://localhost:8080' 
+  },
+  images: {
+    domains: ["res.cloudinary.com"]
   },
   webpack5: true,
   webpack: (config) => {
