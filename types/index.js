@@ -15,6 +15,8 @@ export const ALARMA              = 'ALARMA';
 // estados del chat
 export const TODOS_LOS_USUARIOS   = 'TODOS_LOS_USUARIOS';
 export const CHAT_ACTIVO          = 'CHAT_ACTIVO';
+export const USUARIO_ACTIVO       = 'USUARIO_ACTIVO';
 export const NUEVO_MENSAJE        = 'NUEVO_MENSAJE';
 export const OBTENER_MENSAJES     = 'OBTENER_MENSAJES';
 export const APERTURA_CIERRE_MENU = 'APERTURA_CIERRE_MENU';
+export const ELIMINAR_ESTADO_CHAT = 'ELIMINAR_ESTADO_CHAT';

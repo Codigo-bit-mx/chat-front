@@ -2,7 +2,7 @@ module.exports = {
   reactStrictMode: true,
    env: {
     backendURLLOCAL:'http://localhost:8080',
-    backendURLProduccion: 'https://chatbitback21.herokuapp.com/',
+    // backendURLProduccion: 'https://chatbitback21.herokuapp.com/',
     // socket: 'https://chatbitback21.herokuapp.com/'
     socket: 'http://localhost:8080' 
   },

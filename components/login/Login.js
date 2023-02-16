@@ -81,10 +81,12 @@ const Login = () => {
     }
 
     useEffect(() => {
-        if(autenticacion || token){
+        console.log(autenticacion)
+        console.log(token)
+        console.log("login", autenticacion && token)
+        if(autenticacion && token){
             router.push('/chat');
             usuarioAutenticado();
-
         }
         //eslint-disable-next-line
     }, [autenticacion]);

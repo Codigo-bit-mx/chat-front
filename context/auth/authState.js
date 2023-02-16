@@ -79,7 +79,7 @@ const AuthState = ({children}) => {
   }
 
   const registroUsuario = async (datos) => {
-    console.log(datos)
+    
     try {
       const resultado = await clienteAxios.post('/api/login/new', datos);
       console.log(resultado)

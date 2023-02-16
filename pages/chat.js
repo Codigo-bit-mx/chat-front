@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Layout        from '../components/Layout';
 import AuthContext   from '../context/auth/authContext'; 
 import chatContext   from '../context/chat/chatContext';
@@ -9,45 +9,38 @@ import Header   from '../components/Header';
 import Usuarios from '../components/chat/usuarios';
 import Mensajes from '../components/chat/mensajes';
 
-import { MdOutlineArrowBackIosNew } from 'react-icons/md';
-
 
 const ContenedorCHAT = styled.div`
     width: 100%;
-`;
-
-const ParrafoContenedor = styled.p`
-    margin:0;
-    color: white;
-    font-size: 11px;
-    padding: 0 0 0 10px;
-    cursor: pointer;
-
-    @media(min-width: 768px){
-        font-size: 13px;
-        padding: 0 0 0 15px;
-    }
+    
 `;
 
 const MarcoCHAT = styled.div`
     display: grid;
     grid-template-columns: ${({menu}) => menu ? '30% 70%' : '100%'};    
-    padding: 0em 10px;
+    // padding: 0em 10px;
+    min-height: 93.4%;
 
     @media(min-width: 768px){
         grid-template-columns: ${({menu}) => menu ? '20% 80%' : '100%'};  
-        padding: 0em 2em;
+        // padding: 0em 2em;
     }
 `;
 
 const MarcoUsuarios = styled.div`
     display: ${({menu}) => menu ? 'block' : 'none'};
-    height: 100vh;
+    padding: 0px 15px;
+    min-height: 93.4%;
     border-right: 1px solid #343434;
     -webkit-transform: translateX(0);
     transform: translateX(0);
     -webkit-transition: 150ms ease-in;
     transition: 150ms ease-in;
+    background-color: #20272c;
+
+    p{
+        color: white;
+    }
 `;
 
 const ContenerdorDialogo = styled.div`
@@ -55,7 +48,8 @@ const ContenerdorDialogo = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    min-height: 93.4%;
+    background-color: #000;
 `;
 
 const Dialogo = styled.p`
@@ -71,11 +65,13 @@ const Dialogo = styled.p`
 const Chat = () => {
     
     const router = new useRouter();
+    const [nombre, setNombre] = useState(null)
+
     const authContext = useContext(AuthContext);
     const { usuario, autenticacion, alarma, usuarioAutenticado } = authContext;
     const chat = useContext(chatContext);
     const { usuarios, menu, chatactivo, interactive } = chat;
-   
+    
     useEffect(() => {
         if(!autenticacion) {
             router.push('/');
@@ -95,19 +91,16 @@ const Chat = () => {
         <>
         <Layout> 
 
-        <Header />
-
-        <ContenedorCHAT> 
         
-        <ParrafoContenedor onClick={ () => interactive ()}> <MdOutlineArrowBackIosNew /> <span>Contactos</span> </ParrafoContenedor>
-         
+        <ContenedorCHAT> 
+        <Header />
+           
          <MarcoCHAT menu={menu}>    
     
             <MarcoUsuarios 
                 menu={menu}
             >
                 
-            <p>Amigos</p>
             {
                 usuarios
                 .filter( user => user.uid !== usuario.uid)
@@ -118,16 +111,19 @@ const Chat = () => {
                     />
                 ))
             }
+
             </MarcoUsuarios>
 
         <div>
             
-            { chatactivo ? ( <Mensajes /> ) : (<ContenerdorDialogo> <Dialogo> Selecciona un Chat en el apartado de contactos ! </Dialogo> </ContenerdorDialogo> ) }  
+            { chatactivo ? ( <Mensajes  /> ) : (<ContenerdorDialogo> <Dialogo> Selecciona un Chat en el apartado de contactos ! </Dialogo> </ContenerdorDialogo> ) }  
             
         </div>
        
          </MarcoCHAT>
         </ContenedorCHAT>
+
+
         </Layout>
         </>
      );

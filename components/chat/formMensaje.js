@@ -9,6 +9,7 @@ const ContenedorForm = styled.div`
     display: grid;
     grid-template-columns: 85% 15%; 
     padding: 0 1em;
+    background-color: #20272c;
 `;
 
 const ContenedorInput = styled.div`
@@ -19,6 +20,7 @@ const ContenedorInput = styled.div`
 const Input = styled.input`
     background-color: #3c3c3c;
     width: 100%;
+    height: 50px;
     padding: 5px;
     color: white;
     border: none;
